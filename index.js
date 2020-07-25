@@ -8,6 +8,7 @@ const moment = require('moment-timezone')
 const numeral = require('numeral')
 const _ = require('lodash')
 const axios = require('axios')
+const legos = require("@studydefi/money-legos");
 
 // SERVER CONFIG
 const PORT = process.env.PORT || 5000
