@@ -11,7 +11,7 @@ const axios = require('axios')
 const legos = require('@studydefi/money-legos').legos;
 
 // SERVER CONFIG
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 const app = express();
 const server = http.createServer(app).listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
@@ -21,7 +21,7 @@ const web3 = new Web3(process.env.RPC_URL)
 // Uniswap Factory Contract: https://etherscan.io/address/0xc0a47dfe034b400b47bdad5fecda2621de6c4d95#code
 const uniswapFactoryContract = new web3.eth.Contract(legos.uniswap.factory.abi, legos.uniswap.factory.address)
 
-const kyberRateContract = new web3.eth.Contract(legos.kyber.factory.abi, KYBER_RATE_ADDRESS)
+const kyberRateContract = new web3.eth.Contract(legos.kyber.network.abi, legos.kyber.network.address)
 
 async function checkPair(args) {
   const { inputTokenSymbol, inputTokenAddress, outputTokenSymbol, outputTokenAddress, inputAmount } = args
